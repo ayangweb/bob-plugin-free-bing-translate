@@ -8,9 +8,13 @@ async function translate(query, completion) {
 	try {
 		const { text, detectFrom: fromLang, detectTo: to } = query;
 
-		const { data } = await $http.get({
+		const params = await $http.get({
 			url: "https://cn.bing.com/translator",
 		});
+
+		if (!params?.data) throw new Error();
+
+		const { data } = params;
 
 		const [, IG] = data.match(/IG:"([A-Za-z0-9]+)"/);
 		const [, IID] = data.match(/data-iid="(.+?)"/);
@@ -19,17 +23,15 @@ async function translate(query, completion) {
 		);
 
 		const result = await $http.post({
-			url: `https://cn.bing.com/ttranslatev3`,
+			url: `https://cn.bing.com/ttranslatev3?isVertical=1&IG=${IG}&IID=${IID}`,
 			body: {
-				isVertical: 1,
-				IG,
-				IID,
 				text,
 				fromLang,
 				to,
 				token,
 				key,
 			},
+			header: { "content-type": "application/x-www-form-urlencoded" },
 			timeout: 1000 * 60,
 		});
 
@@ -39,15 +41,14 @@ async function translate(query, completion) {
 
 		const translateResult = result.data;
 
-		const resultText = translateResult[0]?.translations[0]?.text;
-
-		if (!resultText) throw new Error();
+		if (translateResult?.statusCode) throw new Error();
 
 		completion({
 			result: {
 				from: fromLang,
 				to,
-				toParagraphs: resultText.split("\n"),
+				toParagraphs:
+					translateResult[0].translations[0].text.split("\n"),
 			},
 		});
 	} catch (error) {

@@ -2,6 +2,13 @@
   "identifier": "com.bob-plugin-free-bing-translate",
   "versions": [
     {
+      "version": "0.0.2",
+      "desc": "重构了请求接口时的参数传递",
+      "sha256": "3881ca3b9f76260e281ea937f73e63f378764875a9fae9496ea0af88e3164f38",
+      "url": "https://github.com/bilibili-ayang/bob-plugin-free-bing-translate/releases/download/v0.0.2/bob-plugin-free-bing-translate.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "0.0.1",
       "desc": "初始版本",
       "sha256": "9a72b4126b9882f50198fb649a1b1773e72539cc22677472dcbc1fe11135ff21",

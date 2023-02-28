@@ -1,6 +1,6 @@
 {
   "name": "bob-plugin-free-bing-translate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "bob-plugin-free-bing-translate",
   "main": "index.js",
   "scripts": {

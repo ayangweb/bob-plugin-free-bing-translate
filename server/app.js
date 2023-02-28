@@ -27,16 +27,7 @@ app.listen("5678", () => {
 	console.log("端口号为 5678 的服务器已经启动！");
 });
 
-const stringify = (params) =>
-	Object.keys(params)
-		.reduce(
-			(newParams, key) => newParams.concat(`${key}=${params[key]}`),
-			[]
-		)
-		.join("&");
-
 // 翻译 api
-// IG IID token key 可以通过搭配 Cheerio 抓取 https://cn.bing.com/translator 页面的参数
 router.post("/translate", async (ctx) => {
 	// body 传 text(所译文本) 和 to(目标语言，查看 bob 文件夹可得知) 为要翻译的内容
 	const { body } = ctx.request;
@@ -58,15 +49,18 @@ router.post("/translate", async (ctx) => {
 
 	const { data: translateResult } = await axios.post(
 		"https://cn.bing.com/ttranslatev3",
-		stringify(bodyParams),
+		bodyParams,
 		{
 			params: {
 				isVertical: 1,
 				IG,
 				IID,
 			},
+			headers: { "content-type": "application/x-www-form-urlencoded" },
 		}
 	);
+
+	if (translateResult?.statusCode) return;
 
 	ctx.body = translateResult[0].translations[0].text.split("\n");
 });
