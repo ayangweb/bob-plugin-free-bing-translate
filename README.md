@@ -16,6 +16,8 @@
 
 > [阿里翻译插件(免秘钥)](https://github.com/bilibili-ayang/bob-plugin-free-ali-translate)
 
+> [搜狗翻译插件(免秘钥)](https://github.com/bilibili-ayang/bob-plugin-free-sougou-translate)
+
 > [必应翻译插件(免秘钥)](https://github.com/bilibili-ayang/bob-plugin-free-bing-translate)
 
 ### 使用截图如下：
