@@ -35,28 +35,24 @@ async function translate(query, completion) {
 			timeout: 1000 * 60,
 		});
 
-		if (!result?.data) {
-			throw new Error();
-		}
+		if (!result?.data) throw new Error();
 
-		const translateResult = result.data;
+		const { statusCode, errorMessage } = result.data;
 
-		if (translateResult?.statusCode) throw new Error();
+		if (statusCode) throw new Error(errorMessage);
 
 		completion({
 			result: {
 				from: fromLang,
 				to,
-				toParagraphs:
-					translateResult[0].translations[0].text.split("\n"),
+				toParagraphs: result.data[0].translations[0].text.split("\n"),
 			},
 		});
-	} catch (error) {
+	} catch ({ message }) {
 		completion({
 			error: {
 				type: "unknown",
-				message: "未知错误",
-				addtion: "如果多次请求失败，请联系插件作者！",
+				message,
 			},
 		});
 	}

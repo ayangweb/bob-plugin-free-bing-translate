@@ -60,7 +60,13 @@ router.post("/translate", async (ctx) => {
 		}
 	);
 
-	if (translateResult?.statusCode) return;
+	const { statusCode, errorMessage } = translateResult;
+
+	if (statusCode) {
+		ctx.body = errorMessage;
+
+		return;
+	}
 
 	ctx.body = translateResult[0].translations[0].text.split("\n");
 });
