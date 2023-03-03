@@ -1,6 +1,6 @@
 {
   "identifier": "com.bob-plugin-free-bing-translate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "category": "translate",
   "name": "必应翻译",
   "summary": "免token调用必应翻译",
