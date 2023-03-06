@@ -33,6 +33,8 @@ const updateVersion = (dir) => {
 
 			zip.writeZip(PLUGIN_DIR);
 
+			if (file.versions.find((item) => item.version === version)) return;
+
 			const sha256 = crypto
 				.createHash("sha256")
 				.update(fs.readFileSync(PLUGIN_DIR))
