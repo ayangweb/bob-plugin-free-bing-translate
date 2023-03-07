@@ -29,7 +29,7 @@ app.listen("5678", () => {
 
 // 翻译 api
 router.post("/translate", async (ctx) => {
-	// body 传 text(所译文本) 和 to(目标语言，查看 bob 文件夹可得知) 为要翻译的内容
+	// body 传 text(所译文本) 和 to(目标语言)
 	const { body } = ctx.request;
 
 	const { data } = await axios.get("https://cn.bing.com/translator");
