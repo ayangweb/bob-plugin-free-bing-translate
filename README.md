@@ -22,6 +22,8 @@
 
 > [爱词霸翻译插件(免秘钥)](https://github.com/bilibili-ayang/bob-plugin-free-iciba-translate)
 
+> [计算器插件](https://github.com/bilibili-ayang/bob-plugin-calculator)
+
 > [必应翻译插件(免秘钥)](https://github.com/bilibili-ayang/bob-plugin-free-bing-translate)
 
 ### 使用截图如下：
