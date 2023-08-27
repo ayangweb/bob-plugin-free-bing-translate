@@ -22,8 +22,8 @@ async function translate(query, completion) {
 			/var params_AbusePreventionHelper\s*=\s*\[([0-9]+),\s*"([^"]+)",[^\]]*\];/
 		);
 
-		const result = await $http.post({
-			url: `https://cn.bing.com/ttranslatev3?isVertical=1&IG=${IG}&IID=${IID}`,
+		const getRequestData = (subdomain = "cn") => ({
+			url: `https://${subdomain}.bing.com/ttranslatev3?isVertical=1&IG=${IG}&IID=${IID}`,
 			body: {
 				text,
 				fromLang,
@@ -35,7 +35,17 @@ async function translate(query, completion) {
 			timeout: 1000 * 60,
 		});
 
-		if (!result?.data) throw new Error();
+		let result = await $http.post({
+			...getRequestData(),
+		});
+
+		if (!result?.data) {
+			result = await $http.post({
+				...getRequestData("www"),
+			});
+
+			if (!result?.data) throw new Error();
+		}
 
 		const { statusCode, errorMessage } = result.data;
 
