@@ -2,6 +2,13 @@
   "identifier": "com.bob-plugin-free-bing-translate",
   "versions": [
     {
+      "version": "0.0.4",
+      "desc": "https://github.com/bilibili-ayang/bob-plugin-free-bing-translate/blob/master/CHANGELOG.md",
+      "sha256": "0b17ec229051302b19989235dba543a7344ac2cd15952e29e6764f004bee3305",
+      "url": "https://github.com/bilibili-ayang/bob-plugin-free-bing-translate/releases/download/v0.0.4/bob-plugin-free-bing-translate.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "0.0.3",
       "desc": "https://github.com/bilibili-ayang/bob-plugin-free-bing-translate/blob/master/CHANGELOG.md",
       "sha256": "c962deec98d6d7d93aa42d6d52abadf8a2ab4f3163f52cfa1d2e4bd43b3998a4",
