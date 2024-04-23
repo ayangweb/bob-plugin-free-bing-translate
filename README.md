@@ -4,7 +4,7 @@
 
 > src 文件夹主要为 bob 用户开发，bob 是一款 macOS 上的翻译软件，官网地址：[bob](https://bobtranslate.com/)
 >
-> 插件下载地址：[bob-plugin-free-bing-translate-v0.0.4.bobplugin](https://github.com/bilibili-ayang/bob-plugin-free-bing-translate/releases/download/v0.0.4/bob-plugin-free-bing-translate.bobplugin)
+> 插件下载地址：[bob-plugin-free-bing-translate-v0.0.5.bobplugin](https://github.com/bilibili-ayang/bob-plugin-free-bing-translate/releases/download/v0.0.5/bob-plugin-free-bing-translate.bobplugin)
 
 > server 文件夹是 node.js 服务器，可以自行改造后在任意场景下使用！
 
