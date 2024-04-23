@@ -1,5 +1,12 @@
 
 
+## [0.0.5](https://github.com/ayangweb/bob-plugin-free-bing-translate/compare/v0.0.4...v0.0.5) (2024-04-23)
+
+
+### Performance Improvements
+
+* optimized code ([eb341b4](https://github.com/ayangweb/bob-plugin-free-bing-translate/commit/eb341b4103fca19fada914ef2bf33f3ad000d7be))
+
 ## [0.0.4](https://github.com/bilibili-ayang/bob-plugin-free-bing-translate/compare/v0.0.3...v0.0.4) (2023-08-27)
 
 
